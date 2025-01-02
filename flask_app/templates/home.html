@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyMoney</title>
+    <link rel="icon" href="/static/img/Logo.png" type="image/png">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+    <script src="{{ url_for('static', filename='js/home.js') }}"></script>
+</head>
+<body>
+    <header>
+        <h1>MyMoney</h1>
+        <button>Login</button>
+        <button>Sign Up</button>
+    </header>
+    <form id="loginForm" class="hide" method="POST">
+        {{ Lform.hidden_tag() }}
+        <div class="form-group">
+        {{ Lform.username.label(class="form-label") }}
+        {{ Lform.username(class="form-control", size=32, required=true) }}
+        </div>
+        <div class="form-group">
+        {{ Lform.password.label(class="form-label") }}
+        {{ Lform.password(class="form-control", size=32, required=true) }}
+        </div>
+        <div>
+        {{ Lform.submit() }}
+        </div>
+    </form>
+    <form id="registerForm" class="hide" action="POST">
+        {{ Rform.hidden_tag() }}
+        <div class="form-group">
+        {{ Rform.username.label(class="form-label") }}
+        {{ Rform.username(class="form-control", size=32, required=true) }}
+        </div>
+        <div class="form-group">
+        {{ Rform.password.label(class="form-label") }}
+        {{ Rform.password(class="form-control", size=32, required=true) }}
+        </div>
+        <div>
+        {{ RForm.submit() }}
+        </div>
+    </form>
+    <main>
+        <h2>
+            Manage Your Money
+        </h2>
+        <h2>
+            Track Your Expenses
+        </h2>
+        <h2>
+            Plan Your Projects
+        </h2>
+        <h2>
+            And More
+        </h2>
+        <h2>
+            <button>Start Here</button>
+        </h2>
+    </main>
+</body>
+</html>
